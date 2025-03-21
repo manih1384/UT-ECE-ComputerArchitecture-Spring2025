@@ -19,3 +19,7 @@ run -all
 # ** Note: $stop    : C:/uni/sem4/Computer Architecture/Computer_architecture/CA1/stack_tb.sv(83)
 #    Time: 100 ns  Iteration: 0  Instance: /tb_stack
 # Break in Module tb_stack at C:/uni/sem4/Computer Architecture/Computer_architecture/CA1/stack_tb.sv line 83
+# Compile of stack.sv was successful.
+# Compile of stack_tb.sv was successful.
+# Compile of queue.sv failed with 1 errors.
+# 3 compiles, 1 failed with 1 error.
