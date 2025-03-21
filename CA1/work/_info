@@ -1,0 +1,61 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/uni/sem3/logic circuit/CA/CABonus
+vstack
+Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z1 !s110 1742555321
+!i10b 1
+!s100 nQJT?`:8i;L0MEB^T_UA[2
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Ia5zi378BY<m[>`0Yo@cBK2
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+S1
+Z4 dC:/uni/sem4/Computer Architecture/Computer_architecture/CA1
+w1742555317
+8C:/uni/sem4/Computer Architecture/Computer_architecture/CA1/stack.sv
+FC:/uni/sem4/Computer Architecture/Computer_architecture/CA1/stack.sv
+!i122 1
+L0 1 41
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1742555320.000000
+!s107 C:/uni/sem4/Computer Architecture/Computer_architecture/CA1/stack.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/uni/sem4/Computer Architecture/Computer_architecture/CA1/stack.sv|
+!i113 1
+Z6 o-work work -sv
+Z7 tCvgOpt 0
+vtb_stack
+R0
+R1
+!i10b 1
+!s100 F>^^B98O=z`:<j=QdVZ8k3
+R2
+II0VWEgQ>?6FcC4Y@T1?W:0
+R3
+S1
+R4
+w1742555237
+8C:/uni/sem4/Computer Architecture/Computer_architecture/CA1/stack_tb.sv
+FC:/uni/sem4/Computer Architecture/Computer_architecture/CA1/stack_tb.sv
+!i122 2
+L0 3 84
+R5
+r1
+!s85 0
+31
+!s108 1742555321.000000
+!s107 C:/uni/sem4/Computer Architecture/Computer_architecture/CA1/stack_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/uni/sem4/Computer Architecture/Computer_architecture/CA1/stack_tb.sv|
+!i113 1
+R6
+R7

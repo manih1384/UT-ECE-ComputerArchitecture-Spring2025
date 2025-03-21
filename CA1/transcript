@@ -1,0 +1,21 @@
+# Compile of stack.sv failed with 1 errors.
+# Compile of stack_tb.sv was successful.
+# 2 compiles, 1 failed with 1 error.
+# Compile of stack.sv was successful.
+# Compile of stack_tb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.tb_stack
+# vsim -gui work.tb_stack 
+# Start time: 14:38:49 on Mar 21,2025
+# Loading sv_std.std
+# Loading work.tb_stack
+# Loading work.stack
+add wave -position insertpoint sim:/tb_stack/*
+run -all
+# Popped value: 11
+# Popped value: 10
+# Popped value: 01
+# Stack is empty.
+# ** Note: $stop    : C:/uni/sem4/Computer Architecture/Computer_architecture/CA1/stack_tb.sv(83)
+#    Time: 100 ns  Iteration: 0  Instance: /tb_stack
+# Break in Module tb_stack at C:/uni/sem4/Computer Architecture/Computer_architecture/CA1/stack_tb.sv line 83
