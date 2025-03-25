@@ -242,16 +242,14 @@ module rat_top (
         .run(run)
     );
 
-    // Memory instantiation
     maze_memory memory_inst (
         .clk(clk),
-        .rst(rst),
         .X(X),
         .Y(Y),
-        .D(D_out),  // Data to write (from datapath)
-        .WR(WR),    // Write enable (from FSM)
-        .RD(RD),    // Read enable (from FSM)
-        .D_out(D_out)  // Data read from memory (to datapath)
+        .D_out(D_out), 
+        .WR(WR),    
+        .RD(RD),    
+        .D_in(1'b1) 
     );
 
     // Coordinate assignment (from datapath to memory)
