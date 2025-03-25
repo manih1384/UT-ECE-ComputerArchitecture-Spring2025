@@ -1,6 +1,7 @@
 
 
 
+
 module rat_fsm(
   input clk, rst, start, D_out, stack_empty, q_empty, run, done,
   output reg RD, load_y, load_x, push, WR, pop, enqueue, dequeue, fail, back_track,reg [1:0] count
@@ -109,13 +110,15 @@ endmodule
 
 module rat_dp (
     input wire clk, rst,
-    input wire RD, load_y, load_x, push, WR, pop, enqueue, dequeue, fail, back_track,D_out
+    input wire RD, load_y, load_x, push, WR, pop, enqueue, dequeue, fail, back_track,D_out,
     input wire [1:0] count,
     output [1:0]q_out,
     output wire done, stack_empty, q_empty, run
 );
 
     wire [1:0] stack_out;
+ wire [1:0] opcode = back_track ? ~stack_out : count;/*inja*/
+
 
     stack stack_inst (
         .clk(clk),
@@ -129,6 +132,7 @@ module rat_dp (
 
     queue q_inst (
         .clk(clk),
+	.rst(rst),
         .enqueue(enqueue),
         .dequeue(dequeue),
         .data_in(stack_out),
@@ -147,7 +151,7 @@ module rat_dp (
     wire [3:0] new_x;
     wire [3:0] new_y;
 
-    wire [1:0] opcode = back_track ? ~stack_out : count;/*inja*/
+   
 
     move_translator mv (
         .x(x_position),
