@@ -109,9 +109,10 @@ endmodule
 
 module rat_dp (
     input wire clk, rst,
-    input wire RD, load_y, load_x, push, WR, pop, enqueue, dequeue, fail, back_track,
-    input wire [1:0] count,q_out,
-    output wire done, D_out, stack_empty, q_empty, run
+    input wire RD, load_y, load_x, push, WR, pop, enqueue, dequeue, fail, back_track,D_out
+    input wire [1:0] count,
+    output [1:0]q_out,
+    output wire done, stack_empty, q_empty, run
 );
 
     wire [1:0] stack_out;
@@ -146,7 +147,7 @@ module rat_dp (
     wire [3:0] new_x;
     wire [3:0] new_y;
 
-    wire [1:0] opcode = back_track ? stack_out : count;
+    wire [1:0] opcode = back_track ? ~stack_out : count;/*inja*/
 
     move_translator mv (
         .x(x_position),
@@ -187,7 +188,8 @@ endmodule
 
 module rat_top (
     input wire clk, rst, start, run,
-    output wire fail, done
+    output wire fail, done,
+    output [1:0] move
 );
 
     // Internal signals
@@ -251,7 +253,7 @@ module rat_top (
         .RD(RD),    
         .D_in(1'b1) 
     );
-
+    assign move = q_out;
     // Coordinate assignment (from datapath to memory)
     assign X = dp_inst.x_position;
     assign Y = dp_inst.y_position;
