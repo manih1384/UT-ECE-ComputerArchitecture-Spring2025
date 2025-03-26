@@ -2,6 +2,7 @@
 
 
 
+
 module rat_fsm(
   input clk, rst, start, D_out, stack_empty, q_empty, run, done,
   output reg RD, load_y, load_x, push, WR, pop, enqueue, dequeue, fail, back_track,reg [1:0] count
@@ -56,7 +57,8 @@ module rat_fsm(
 
       NEW_MOVE: begin
         nstate = D_out ? (co ? CHECK_BACK : NEW_MOVE) : MOVE;
-        counter_en = 1;  
+        counter_en = D_out; 
+	//counter_en = 1;  
         RD = 1;  
       end
 
@@ -117,7 +119,7 @@ module rat_dp (
 );
 
     wire [1:0] stack_out;
- wire [1:0] opcode = back_track ? ~stack_out : count;/*inja*/
+ wire [1:0] opcode = back_track ? ~stack_out : count;
 
 
     stack stack_inst (
@@ -176,6 +178,22 @@ module rat_dp (
     end
 
     assign done = (x_position == 15) & (y_position == 15);
+
+
+
+    maze_memory memory_inst (
+        .clk(clk),
+        .X(new_x),
+        .Y(new_y),
+        .D_out(D_out), 
+        .WR(WR),    
+        .RD(RD),    
+        .D_in(1'b1) 
+    );
+
+
+
+
 
 endmodule
 
@@ -248,15 +266,7 @@ module rat_top (
         .run(run)
     );
 
-    maze_memory memory_inst (
-        .clk(clk),
-        .X(X),
-        .Y(Y),
-        .D_out(D_out), 
-        .WR(WR),    
-        .RD(RD),    
-        .D_in(1'b1) 
-    );
+
     assign move = q_out;
     // Coordinate assignment (from datapath to memory)
     assign X = dp_inst.x_position;
