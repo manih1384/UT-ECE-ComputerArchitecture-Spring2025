@@ -40,9 +40,14 @@ module rat_fsm(
       else if (counter_en)
         count <= count + 1;  
     end
-    co = count[1] & count[0];  
+    // co <= (count == 2'b11) ? 1'b1 : 1'b0; 
   end
-
+  always @(*) begin
+    if (count == 2'b11)  // `co` is 1 only when count is exactly `11`
+      co = 1'b1;
+    else
+      co = 1'b0;
+  end
 
   always @(pstate or start  or co or stack_empty or D_out or q_empty or run or done) begin
     nstate = INIT;

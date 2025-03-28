@@ -1,36 +1,34 @@
 module maze_memory (
-    input wire [3:0] X, Y,       // 4-bit coordinates (0-15)
-    input wire D_in,             // Data to write (1 bit)
-    input wire RD, WR, clk,      // Control signals
-    output reg D_out             // Data read output
+    input wire [3:0] X,     // Column index (0-15)
+    input wire [3:0] Y,     // Row index (0-15)
+    input wire D_in,        // Data input for writes
+    input wire RD, WR, clk, // Read/Write and clock controls
+    output reg D_out        // Data output
 );
 
-    // 16x16 memory (each line stores 16 bits)
-    reg [15:0] memory [0:15];    // 16 rows, 16 bits each
+    // Define a 16x16 memory array
+    reg [15:0] memory [0:15]; // 16 rows, each with 16 bits
 
-    // Initialize memory from file
+    // Initialize the memory from a file
     initial begin
-        $readmemb("maze_map.txt", memory);
+        $readmemb("maze_map.txt", memory); // Load the maze map
     end
 
-    // Read operation with boundary checking
+    // Combinational read logic
     always @(*) begin
         if (RD) begin
-            // Check if coordinates are within bounds
-            if (X > 15 || Y > 15)
-                D_out = 1'b1;    // Outside map = wall
-            else
-                D_out = memory[Y][X];
-        end
-        else begin
-            D_out = 1'b0;        // Default when not reading
+            // Reverse column indexing for top-left to bottom-right corner mapping
+            D_out = memory[Y][15 - X]; // Flip column for correct coordinate access
+        end else begin
+            D_out = 1'b0; // Default output if RD is not set
         end
     end
 
-    // Write operation (only allowed within bounds)
+    // Synchronous write logic
     always @(posedge clk) begin
-        if (WR && X <= 15 && Y <= 15) begin
-            memory[Y][X] <= D_in;
+        if (WR) begin
+            // Write data to the correct column index using reversed logic
+            memory[Y][15 - X] <= D_in;
         end
     end
 
