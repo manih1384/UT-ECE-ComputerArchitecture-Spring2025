@@ -35,10 +35,9 @@ module rat_fsm(
       else if (counter_en)
         count <= count + 1;  
     end
-    // co <= (count == 2'b11) ? 1'b1 : 1'b0; 
   end
   always @(*) begin
-    if (count == 2'b11)  // `co` is 1 only when count is exactly `11`
+    if (count == 2'b11)  
       co = 1'b1;
     else
       co = 1'b0;
@@ -58,7 +57,6 @@ module rat_fsm(
       NEW_MOVE: begin
         nstate = done ? FIFO_MAKER : (D_out ? (co ? CHECK_BACK : NEW_MOVE) : MOVE);
         counter_en = D_out; 
-	//counter_en = 1;  
         RD = 1;  
       end
 
@@ -136,7 +134,7 @@ module rat_dp (
 
     queue q_inst (
         .clk(clk),
-	.rst(rst),
+	    .rst(rst),
         .enqueue(enqueue),
         .dequeue(dequeue),
         .data_in(stack_out),
@@ -216,12 +214,10 @@ module rat_top (
     output [1:0] move
 );
 
-    // Internal signals
     wire RD, load_y, load_x, push, WR, pop, enqueue, dequeue, back_track;
     wire [1:0] count, q_out;
     wire D_out, stack_empty, q_empty;
 
-    // FSM instantiation
     rat_fsm fsm_inst (
         .clk(clk),
         .rst(rst),
@@ -244,7 +240,6 @@ module rat_top (
         .count(count)
     );
 
-    // Datapath instantiation
     rat_dp dp_inst (
         .clk(clk),
         .rst(rst),
