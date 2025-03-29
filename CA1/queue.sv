@@ -26,8 +26,8 @@ module queue #(
       end
 
       if (dequeue && !empty) begin
-        data_out <= queue[head];          
-        head <= head + 1;                 
+        data_out <= queue[tail];          
+        tail <= tail - 1;                 
       end
     end
   end

@@ -45,6 +45,8 @@ module rat_tb;
         
         // Test 2: Run found path
         if (done) begin
+		wait(uut.dp_inst.stack_empty);
+		#100;
             run = 1;
             #10 run = 0;
             wait(uut.dp_inst.q_empty);

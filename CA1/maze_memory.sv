@@ -22,6 +22,7 @@ module maze_memory (
         end else begin
             D_out = 1'b0; // Default output if RD is not set
         end
+        memory[0][15]<=1;
     end
 
     // Synchronous write logic

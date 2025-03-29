@@ -1,8 +1,3 @@
-
-
-
-
-
 module rat_fsm(
   input clk, rst, start, D_out, stack_empty, q_empty, run, done,
   output reg RD, load_y, load_x, push, WR, pop, enqueue, dequeue, fail, back_track,reg [1:0] count
@@ -61,14 +56,14 @@ module rat_fsm(
       end
 
       NEW_MOVE: begin
-        nstate = D_out ? (co ? CHECK_BACK : NEW_MOVE) : MOVE;
+        nstate = done ? FIFO_MAKER : (D_out ? (co ? CHECK_BACK : NEW_MOVE) : MOVE);
         counter_en = D_out; 
 	//counter_en = 1;  
         RD = 1;  
       end
 
       MOVE: begin
-        nstate = done ? FIFO_MAKER : NEW_MOVE;
+        nstate = NEW_MOVE;
         load_x = 1;  
         load_y = 1; 
         counter_rst = 1; 
@@ -99,7 +94,9 @@ module rat_fsm(
         nstate = NEW_MOVE;
         back_track = 1; 
         pop = 1; 
-        counter_rst = 1; 
+        counter_rst = 1;
+	load_x=1;
+	load_y=1; 
       end
 
       FAIL_STATE: begin
@@ -223,7 +220,6 @@ module rat_top (
     wire RD, load_y, load_x, push, WR, pop, enqueue, dequeue, back_track;
     wire [1:0] count, q_out;
     wire D_out, stack_empty, q_empty;
-    wire [3:0] X, Y;  // Coordinates for memory access
 
     // FSM instantiation
     rat_fsm fsm_inst (
@@ -273,8 +269,4 @@ module rat_top (
 
 
     assign move = q_out;
-    // Coordinate assignment (from datapath to memory)
-    assign X = dp_inst.x_position;
-    assign Y = dp_inst.y_position;
-
 endmodule
