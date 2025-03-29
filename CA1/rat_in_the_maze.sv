@@ -95,8 +95,8 @@ module rat_fsm(
         back_track = 1; 
         pop = 1; 
         counter_rst = 1;
-	load_x=1;
-	load_y=1; 
+	      load_x=1;
+	      load_y=1; 
       end
 
       FAIL_STATE: begin
