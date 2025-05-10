@@ -10,7 +10,7 @@ _boot:
 
         Loop:
             addi x9, x9, 4          # i += 4
-            slti x6, x9, 40         # check if 10 elements are traversed (40 = 4 * 10)
+            slti x6, x9, 80         # check if 20 elements are traversed (80 = 4 * 20)
             beq  x6, x0, EndLoop    # if 10 elements are traversed, jump to EndLoop
             lw   x18, 1000(x9)      # element = mem[i]
             slt  x6, x8, x18        # check if element is greater than maxElement
