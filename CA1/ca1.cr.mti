@@ -1,0 +1,59 @@
+{C:/uni/sem4/Computer Architecture/Computer_architecture/CA1/rat_in_the_maze.sv} {1 {vlog -work work -sv -stats=none {C:/uni/sem4/Computer Architecture/Computer_architecture/CA1/rat_in_the_maze.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module rat_fsm
+-- Compiling module rat_dp
+-- Compiling module rat_top
+
+Top level modules:
+	rat_top
+
+} {} {}} {C:/uni/sem4/Computer Architecture/Computer_architecture/CA1/queue.sv} {1 {vlog -work work -sv -stats=none {C:/uni/sem4/Computer Architecture/Computer_architecture/CA1/queue.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module queue
+
+Top level modules:
+	queue
+
+} {} {}} {C:/uni/sem4/Computer Architecture/Computer_architecture/CA1/maze_memory.sv} {1 {vlog -work work -sv -stats=none {C:/uni/sem4/Computer Architecture/Computer_architecture/CA1/maze_memory.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module maze_memory
+
+Top level modules:
+	maze_memory
+
+} {} {}} {C:/uni/sem4/Computer Architecture/Computer_architecture/CA1/stack.sv} {1 {vlog -work work -sv -stats=none {C:/uni/sem4/Computer Architecture/Computer_architecture/CA1/stack.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module stack
+
+Top level modules:
+	stack
+
+} {} {}} {C:/uni/sem4/Computer Architecture/Computer_architecture/CA1/memory_tb.sv} {1 {vlog -work work -sv -stats=none {C:/uni/sem4/Computer Architecture/Computer_architecture/CA1/memory_tb.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module tb_maze_memory
+
+Top level modules:
+	tb_maze_memory
+
+} {} {}} {C:/uni/sem4/Computer Architecture/Computer_architecture/CA1/stack_tb.sv} {1 {vlog -work work -sv -stats=none {C:/uni/sem4/Computer Architecture/Computer_architecture/CA1/stack_tb.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module tb_stack
+
+Top level modules:
+	tb_stack
+
+} {} {}} {C:/uni/sem4/Computer Architecture/Computer_architecture/CA1/rat_tb.sv} {1 {vlog -work work -sv -stats=none {C:/uni/sem4/Computer Architecture/Computer_architecture/CA1/rat_tb.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module rat_tb
+
+Top level modules:
+	rat_tb
+
+} {} {}} {C:/uni/sem4/Computer Architecture/Computer_architecture/CA1/move_translator.sv} {1 {vlog -work work -sv -stats=none {C:/uni/sem4/Computer Architecture/Computer_architecture/CA1/move_translator.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module move_translator
+
+Top level modules:
+	move_translator
+
+} {} {}}

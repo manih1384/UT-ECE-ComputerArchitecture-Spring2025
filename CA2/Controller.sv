@@ -5,7 +5,7 @@ module CU (
     input [2:0] func3,
     input [6:0] func7,
     input zero,
-    output reg MemWrite, RegWrite, ALUSrc2,
+    output reg MemWrite, RegWrite, ALUSrc,
     output reg [1:0] PCSrc, ResultSrc,
     output reg [2:0] ALUControl, ImmSrc
 );
@@ -13,7 +13,7 @@ module CU (
     wire [9:0] function_choose = {func7, func3};
     
     always @(*) begin
-        {MemWrite,RegWrite,ALUSrc2,PCSrc,ResultSrc,ALUControl,ImmSrc}=0
+        {MemWrite,RegWrite,ALUSrc,PCSrc,ResultSrc,ALUControl,ImmSrc}=0;
         
         case (opcode)
 
@@ -22,7 +22,7 @@ module CU (
             // R-Type instructions
             7'd51: begin
                 RegWrite = 1'b1;
-                ALUSrc2 = 1'b0;
+                ALUSrc = 1'b0;
                 ResultSrc = 2'b00;
                 
                 case (function_choose)
@@ -42,7 +42,7 @@ module CU (
             7'd3: begin  
                 ImmSrc = 3'b000;
                 ResultSrc = 2'b01;
-                ALUSrc2 = 1'b1;
+                ALUSrc = 1'b1;
                 RegWrite = 1'b1;
                 ALUControl = 3'b000;  
             end
@@ -55,7 +55,7 @@ module CU (
                 ResultSrc = 2'b00;
                 ImmSrc = 3'b000;
                 RegWrite = 1'b1;
-                ALUSrc2 = 1'b1;
+                ALUSrc = 1'b1;
                 
                 case (func3)
                     3'b000: ALUControl = 3'b000;  // addi
@@ -74,7 +74,7 @@ module CU (
                 PCSrc = 2'b10;
                 ResultSrc = 2'b10;
                 RegWrite = 1'b1;
-                ALUSrc2 = 1'b1;
+                ALUSrc = 1'b1;
             end
             
 
@@ -84,7 +84,7 @@ module CU (
             7'd35: begin  
                 MemWrite = 1'b1;
                 ImmSrc = 3'b001;
-                ALUSrc2 = 1'b1;
+                ALUSrc = 1'b1;
                 ALUControl = 3'b000;
             end
 
@@ -92,7 +92,7 @@ module CU (
             
             // B-Type instructions
             7'd99: begin  
-                ALUSrc2 = 1'b0;
+                ALUSrc = 1'b0;
                 ImmSrc = 3'b010;
                 
                 case (func3)

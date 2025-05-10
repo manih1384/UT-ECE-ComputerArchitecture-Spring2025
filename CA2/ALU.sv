@@ -10,8 +10,8 @@ module ALU (
             3'd1: ALUResult = SrcA - SrcB;      
             3'd2: ALUResult = SrcA & SrcB;      
             3'd3: ALUResult = SrcA | SrcB;      
-            3'd4: ALUResult = (SrcA < SrcB) ? 32'd1 : 32'd0;  
-            3'd5: ALUResult = SrcA ^ SrcB;     
+            3'd4: ALUResult = SrcA ^ SrcB;     
+            3'd5: ALUResult = (SrcA < SrcB) ? 32'd1 : 32'd0;  
             default: ALUResult = 32'd0;
         endcase
     end
