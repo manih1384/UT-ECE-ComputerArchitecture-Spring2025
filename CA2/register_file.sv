@@ -14,10 +14,11 @@ module register_file(clk,rst, RegWrite, A1, A2, A3, WD3, RD1, RD2);
     assign RD2 = registers[A2];
 
     always @(posedge clk or posedge rst) begin
-      if (rst) registers[0]<=32'd0;
-      else if (RegWrite)
+
+      if (RegWrite)
 	    begin
 	        registers[A3] <= WD3;
       end
+      registers[0]<=32'd0;
     end
 endmodule
