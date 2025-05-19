@@ -1,8 +1,7 @@
 module control(
     input clk,
     input reset,
-    input [2:0] opcode,
-    input zero,              // From ALU (zero flag)
+    input [2:0] opcode,          
     input tos_zero,          // From stack (top-of-stack == 0)
     output reg mem_read,
     output reg mem_write,

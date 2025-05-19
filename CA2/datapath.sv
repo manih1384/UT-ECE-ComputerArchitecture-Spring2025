@@ -36,21 +36,21 @@ module datapath(clk, rst, RegWrite, MemWrite, ResultSrc, PCSrc, ALUSrc, ALUContr
     .PCNext(PCNext),
     .PC(PC)
   );    
-    instruction_memory instMem(
+    instruction_memory inst_mem(
         .pc(PC), 
         .inst(instruction)
     );
-    PCPlus4 PCplus4(
+    PCPlus4 PC4(
         .PC(PC), 
         .PCPlus4(PCPlus4)
     );
-    PC_imm_adder PCimm(
+    PC_imm_adder PCI(
         .PC(PC), 
         .offset(ImmExt), 
         .PCTarget(PCTarget)
     );
-    Extend extend(
-        .instruction(instruction), 
+    Extend EXTU(
+        .inst(instruction), 
         .ImmSrc(ImmSrc), 
         .ImmExt(ImmExt)
     );
@@ -61,29 +61,28 @@ module datapath(clk, rst, RegWrite, MemWrite, ResultSrc, PCSrc, ALUSrc, ALUContr
     .A1(A1),
     .A2(A2),
     .A3(A3),
-    .WD3(WD),
+    .WD(WD),
     .RD1(RD1),
     .RD2(RD2)
-  );    
-  SrcB_mux SrcB_data (
+  );    SrcB_mux SrcB_data (
     .ALUSrc(ALUSrc),
     .RD2(RD2),
     .ImmExt(ImmExt),
     .SrcB(SrcB)
   );
     ALU alu (
-    .SrcA(RD1),
-    .SrcB(SrcB),
+    .A(RD1),
+    .B(SrcB),
     .ALUControl(ALUControl),
     .ALUResult(ALUResult),
     .zero(zero)
   );
   Data_memory dataMemory (
     .clk(clk),
-    .A(ALUResult),
-    .WD(RD2),
-    .WE(MemWrite),
-    .read_data(ReadData)
+    .Address(ALUResult),
+    .WriteData(RD2),
+    .MemWrite(MemWrite),
+    .ReadData(ReadData)
   );    
   Result_mux resMux (
     .ResultSrc(ResultSrc),

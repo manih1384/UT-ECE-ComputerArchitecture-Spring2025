@@ -7,7 +7,7 @@ module Data_memory (clk, A, WD, WE ,read_data);
     reg [31:0] adr;
     assign adr = {A[31:2], 2'b00}; 
 
-    initial $readmemb("DataMemory.mem", data_memory);
+    initial $readmemb("DataMemory.txt", data_memory);
 
     always @(posedge clk) begin
         if (WE)
