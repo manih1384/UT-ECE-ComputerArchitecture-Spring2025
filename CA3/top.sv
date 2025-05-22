@@ -11,9 +11,6 @@ module top(
     wire pc_write, ir_write, addr_src, stack_src, mdr_en, jump;
     wire [1:0] alu_control;
 
-    // Additional flags
-    wire zero = (aluOut == 8'b0);          // Assuming ALU sets aluOut
-    wire tos_zero = (tos == 8'b0);         // Top-of-Stack zero flag
 
     // ALU output, for zero flag
     wire [7:0] aluOut;
@@ -48,8 +45,7 @@ module top(
         .clk(clk),
         .reset(rst),
         .opcode(opcode),      // [2:0] from datapath IR
-        .zero(zero),
-        .tos_zero(tos_zero),
+        .tos(tos),
         .mem_read(mem_read),
         .mem_write(mem_write),
         .load_a(load_a),

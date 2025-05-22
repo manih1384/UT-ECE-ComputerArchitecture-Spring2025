@@ -2,7 +2,7 @@ module control(
     input clk,
     input reset,
     input [2:0] opcode,          
-    input tos_zero,          // From stack (top-of-stack == 0)
+    input [7:0]tos,
     output reg mem_read,
     output reg mem_write,
     output reg load_a,
@@ -11,6 +11,7 @@ module control(
     output reg push,
     output reg pop,
     output reg pc_write,
+    output reg jump,
     output reg ir_write,
     output reg addr_src,     // 0=PC, 1=IR address
     output reg stack_src,    // 0=ALU, 1=MDR
@@ -21,10 +22,10 @@ module control(
               LOAD_A = 4'b0001,  // get first operand
               NOT = 4'b0010, // Not doesnt need the second operand
               LOAD_B  = 4'b0011,  // get second operand
-              OP2  = 4'b0100;  // perform two operand inst
-              JUMP =   4'b0101 // Jay-Z or normal jump
-              POP = 4'b0110;
-              LOAD_MDR= 4'b0111;
+              OP2  = 4'b0100, // perform two operand inst
+              JUMP =   4'b0101 ,// Jay-Z or normal jump
+              POP = 4'b0110,
+              LOAD_MDR= 4'b0111,
               PUSH = 4'b1000;
     reg [2:0] state, next_state;
 
@@ -43,13 +44,13 @@ module control(
                                ) : 
                                (LOAD_A);
                                
-            LOAD_A: next_state = (opcode[1]==1 & opcode[0]==1) ? NOT: ;  // go nots or go for two operand instruction
+            LOAD_A: next_state = (opcode[1]==1 & opcode[0]==1) ? NOT: LOAD_B ;  // go nots or go for two operand instruction
             NOT: next_state = FETCH;
             LOAD_B:  next_state = OP2;
             OP2:  next_state = FETCH;
             JUMP: next_state = FETCH;
             POP : next_state = FETCH;
-            LOAD_MDR: next_state = PUSH
+            LOAD_MDR: next_state = PUSH;
             PUSH: next_state = FETCH;
             default: next_state = FETCH;
         endcase
@@ -58,7 +59,6 @@ module control(
 
     always @(*) begin
         {mem_read, mem_write, load_a, load_b, push, pop, pc_write, ir_write, addr_src,alu_control,jump,mdr_en} = 0;
-        alu_func = opcode;
 
         case(state)
             FETCH: begin
@@ -88,8 +88,8 @@ module control(
             
             
             JUMP: begin
-                jump = opcode[0] ? 1 &(~tos)
-                pc_write = opcode[0] ? 1 &(~tos)
+                jump = opcode[0] ? 1: &(~tos);
+                pc_write = opcode[0] ? 1: &(~tos);
             end
 
             POP: begin
