@@ -15,7 +15,8 @@ module control(
     output reg ir_write,
     output reg addr_src,     // 0=PC, 1=IR address
     output reg stack_src,    // 0=ALU, 1=MDR
-    output reg mdr_en        // Memory Data Register enable
+    output reg mdr_en,
+    output reg jump        // Memory Data Register enable
 );
 
     // State definitions - expanded to 4 bits as per your design
