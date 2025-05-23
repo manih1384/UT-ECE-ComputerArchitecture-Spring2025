@@ -14,6 +14,8 @@ module tb_top;
     always #5 clk = ~clk;
 
     initial begin
+        rst = 0;
+        #10;
         rst = 1;
         #20;
         rst = 0;

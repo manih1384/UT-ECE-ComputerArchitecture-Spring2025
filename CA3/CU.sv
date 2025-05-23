@@ -25,7 +25,8 @@ module control(
               JUMP =   4'b0101 ,// Jay-Z or normal jump
               POP = 4'b0110,
               LOAD_MDR= 4'b0111,
-              PUSH = 4'b1000;
+              PUSH = 4'b1000,
+              ID = 4'b1001;
     reg [3:0] state, next_state;
 
     // State register
@@ -37,7 +38,8 @@ module control(
     // Next state logic,  if op[2]==0,else if op[1]==1 then it is jz and jump
     always @(*) begin
         case(state)
-            FETCH: next_state = (opcode[2]) ? 
+            FETCH : next_state=ID;
+            ID: next_state = (opcode[2]) ? 
                                ((opcode[1]) ? JUMP : // jz or normal jump
                                 (opcode[0]) ? POP : LOAD_MDR
                                ) : 
@@ -64,6 +66,11 @@ module control(
                 addr_src = 0;// zero for instruction,one for mem access
                 ir_write = 1;
                 pc_write=1;
+            end
+            ID: begin
+                // addr_src = 0;// zero for instruction,one for mem access
+                // ir_write = 1;
+                // pc_write=1;
             end
             
             LOAD_A: begin 
