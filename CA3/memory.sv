@@ -9,7 +9,7 @@ module Mem (
 reg [7:0] rom_array [0:31];
 
 initial begin
-    $readmemh("rom_data.mem", rom_array);
+    $readmemb("rom_data.mem", rom_array);
 end
 
 always @(posedge clk) begin

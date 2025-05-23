@@ -3,7 +3,6 @@ module control(
     input reset,
     input [2:0] opcode,          
     input [7:0]tos,
-    output reg mem_read,
     output reg mem_write,
     output reg load_a,
     output reg load_b,
@@ -27,7 +26,7 @@ module control(
               POP = 4'b0110,
               LOAD_MDR= 4'b0111,
               PUSH = 4'b1000;
-    reg [2:0] state, next_state;
+    reg [3:0] state, next_state;
 
     // State register
     always @(posedge clk or posedge reset) begin
@@ -58,7 +57,7 @@ module control(
 
 
     always @(*) begin
-        {mem_read, mem_write, load_a, load_b, push, pop, pc_write, ir_write, addr_src,alu_control,jump,mdr_en} = 0;
+        {mem_write, load_a, load_b, push, pop, pc_write, ir_write, addr_src,alu_control,jump,mdr_en} = 0;
 
         case(state)
             FETCH: begin

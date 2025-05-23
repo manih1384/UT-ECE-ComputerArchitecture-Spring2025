@@ -1,4 +1,4 @@
-module parametric_register #(
+module Register #(
     parameter WIDTH = 8  
 )(
     input wire clk,
