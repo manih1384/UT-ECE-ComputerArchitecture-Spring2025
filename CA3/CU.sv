@@ -59,7 +59,7 @@ module control(
 
 
     always @(*) begin
-        {mem_write, load_a, load_b, push, pop, pc_write, ir_write, addr_src,alu_control,jump,mdr_en} = 0;
+        {stack_src,mem_write, load_a, load_b, push, pop, pc_write, ir_write, addr_src,alu_control,jump,mdr_en} = 0;
 
         case(state)
             FETCH: begin
@@ -94,8 +94,8 @@ module control(
             
             
             JUMP: begin
-                jump = opcode[0] ? 1: &(~tos);
-                pc_write = opcode[0] ? 1: &(~tos);
+                jump = opcode[0] ?~(|tos) :1 ;
+                pc_write = opcode[0] ? ~(|tos):1 ;
             end
 
             POP: begin
