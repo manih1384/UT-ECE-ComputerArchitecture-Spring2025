@@ -1,0 +1,27 @@
+# Compile of ALU.sv was successful.
+# Compile of Controller.sv was successful.
+# Compile of Data_Memory.sv was successful.
+# Compile of datapath.sv was successful.
+# Compile of extend.sv failed with 1 errors.
+# Compile of instruction_memory.sv was successful.
+# Compile of Muxs.sv was successful.
+# Compile of PC_register.sv was successful.
+# Compile of PCPlus4.sv was successful.
+# Compile of PCTarget.sv was successful.
+# Compile of register_file.sv was successful.
+# Compile of top.sv was successful.
+# 12 compiles, 1 failed with 1 error.
+# Compile of ALU.sv was successful.
+# Compile of Controller.sv was successful.
+# Compile of Data_Memory.sv was successful.
+# Compile of datapath.sv was successful.
+# Compile of extend.sv was successful with warnings.
+# Compile of instruction_memory.sv was successful.
+# Compile of Muxs.sv was successful.
+# Compile of PC_register.sv was successful.
+# Compile of PCPlus4.sv was successful.
+# Compile of PCTarget.sv was successful.
+# Compile of register_file.sv was successful.
+# Compile of top.sv was successful.
+# 12 compiles, 0 failed with no errors.
+# Load canceled
