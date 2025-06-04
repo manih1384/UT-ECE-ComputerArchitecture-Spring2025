@@ -1,0 +1,101 @@
+C:/Users/manih/OneDrive/Desktop/uni/term4/CA/projects/CA2/riscVtb.sv {1 {vlog -work work -sv -stats=none C:/Users/manih/OneDrive/Desktop/uni/term4/CA/projects/CA2/riscVtb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module tb_RISCV
+
+Top level modules:
+	tb_RISCV
+
+} {} {}} C:/Users/manih/OneDrive/Desktop/uni/term4/CA/projects/CA2/instruction_memory.sv {1 {vlog -work work -sv -stats=none C:/Users/manih/OneDrive/Desktop/uni/term4/CA/projects/CA2/instruction_memory.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module instruction_memory
+
+Top level modules:
+	instruction_memory
+
+} {} {}} C:/Users/manih/OneDrive/Desktop/uni/term4/CA/projects/CA2/Muxs.sv {1 {vlog -work work -sv -stats=none C:/Users/manih/OneDrive/Desktop/uni/term4/CA/projects/CA2/Muxs.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module PC_mux
+-- Compiling module Result_mux
+-- Compiling module SrcB_mux
+
+Top level modules:
+	PC_mux
+	Result_mux
+	SrcB_mux
+
+} {} {}} C:/Users/manih/OneDrive/Desktop/uni/term4/CA/projects/CA2/datapath.sv {1 {vlog -work work -sv -stats=none C:/Users/manih/OneDrive/Desktop/uni/term4/CA/projects/CA2/datapath.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module datapath
+
+Top level modules:
+	datapath
+
+} {} {}} C:/Users/manih/OneDrive/Desktop/uni/term4/CA/projects/CA2/PC_register.sv {1 {vlog -work work -sv -stats=none C:/Users/manih/OneDrive/Desktop/uni/term4/CA/projects/CA2/PC_register.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module PC_register
+
+Top level modules:
+	PC_register
+
+} {} {}} C:/Users/manih/OneDrive/Desktop/uni/term4/CA/projects/CA2/extend.sv {2 {vlog -work work -sv -stats=none C:/Users/manih/OneDrive/Desktop/uni/term4/CA/projects/CA2/extend.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Extend
+** Warning: C:/Users/manih/OneDrive/Desktop/uni/term4/CA/projects/CA2/extend.sv(7): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+** Warning: C:/Users/manih/OneDrive/Desktop/uni/term4/CA/projects/CA2/extend.sv(8): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+** Warning: C:/Users/manih/OneDrive/Desktop/uni/term4/CA/projects/CA2/extend.sv(9): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+** Warning: C:/Users/manih/OneDrive/Desktop/uni/term4/CA/projects/CA2/extend.sv(10): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+** Warning: C:/Users/manih/OneDrive/Desktop/uni/term4/CA/projects/CA2/extend.sv(11): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+
+Top level modules:
+	Extend
+
+} {} {}} C:/Users/manih/OneDrive/Desktop/uni/term4/CA/projects/CA2/ALU.sv {1 {vlog -work work -sv -stats=none C:/Users/manih/OneDrive/Desktop/uni/term4/CA/projects/CA2/ALU.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}} C:/Users/manih/OneDrive/Desktop/uni/term4/CA/projects/CA2/Data_Memory.sv {1 {vlog -work work -sv -stats=none C:/Users/manih/OneDrive/Desktop/uni/term4/CA/projects/CA2/Data_Memory.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Data_memory
+
+Top level modules:
+	Data_memory
+
+} {} {}} C:/Users/manih/OneDrive/Desktop/uni/term4/CA/projects/CA2/PCTarget.sv {1 {vlog -work work -sv -stats=none C:/Users/manih/OneDrive/Desktop/uni/term4/CA/projects/CA2/PCTarget.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module PC_imm_adder
+
+Top level modules:
+	PC_imm_adder
+
+} {} {}} C:/Users/manih/OneDrive/Desktop/uni/term4/CA/projects/CA2/top.sv {1 {vlog -work work -sv -stats=none C:/Users/manih/OneDrive/Desktop/uni/term4/CA/projects/CA2/top.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module RISCV
+
+Top level modules:
+	RISCV
+
+} {} {}} C:/Users/manih/OneDrive/Desktop/uni/term4/CA/projects/CA2/PCPlus4.sv {1 {vlog -work work -sv -stats=none C:/Users/manih/OneDrive/Desktop/uni/term4/CA/projects/CA2/PCPlus4.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module PCPlus4
+
+Top level modules:
+	PCPlus4
+
+} {} {}} C:/Users/manih/OneDrive/Desktop/uni/term4/CA/projects/CA2/register_file.sv {1 {vlog -work work -sv -stats=none C:/Users/manih/OneDrive/Desktop/uni/term4/CA/projects/CA2/register_file.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module register_file
+
+Top level modules:
+	register_file
+
+} {} {}} C:/Users/manih/OneDrive/Desktop/uni/term4/CA/projects/CA2/Controller.sv {1 {vlog -work work -sv -stats=none C:/Users/manih/OneDrive/Desktop/uni/term4/CA/projects/CA2/Controller.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module CU
+
+Top level modules:
+	CU
+
+} {} {}}
