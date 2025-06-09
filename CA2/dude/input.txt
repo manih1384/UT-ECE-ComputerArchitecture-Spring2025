@@ -1,17 +1,18 @@
-    add x8, x0, x0
-    add x9, x0, x0
-    add x18, x0, x0
+    add     x8,  x0, x0
+    add     x9,  x0, x0
+    add     x18, x0, x0
+    add     x21, x0, x0
 loop:
-    slti x5, x18, 80
-    beq x5, x0, ENDLOOP
-
-    add x20, x8, x18
-    lw x6, 0(x20)
-
-    slt x7, x9, x6
-    beq x7, x0, ENDIF      
-    add x9, x0, x6          
+    slti    x5, x18, 80
+    beq     x5, x0, ENDLOOP
+    add     x20, x8, x18
+    lw      x6, 0(x20)
+    slt     x7, x10, x6
+    beq     x7, x0, ENDIF
+    add     x10, x0, x6
+    add     x9,  x0, x21
 ENDIF:
-    addi x18, x18, 4            
-    jal x19, loop
+    addi    x18, x18, 4
+    addi    x21, x21, 1
+    jal     x19, loop
 ENDLOOP:

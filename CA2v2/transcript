@@ -1,0 +1,128 @@
+vsim -gui work.tb_RISCV
+# vsim -gui work.tb_RISCV 
+# Start time: 01:20:32 on Jun 06,2025
+# Loading sv_std.std
+# Loading work.tb_RISCV
+# Loading work.RISCV
+# Loading work.CU
+# Loading work.datapath
+# Loading work.PC_mux
+# Loading work.PC_register
+# Loading work.instruction_memory
+# Loading work.PCPlus4
+# Loading work.PC_imm_adder
+# Loading work.Extend
+# Loading work.register_file
+# Loading work.SrcB_mux
+# Loading work.ALU
+# Loading work.Data_memory
+# Loading work.Result_mux
+run -all
+# ** Note: $finish    : C:/uni/sem4/Computer Architecture/Computer_architecture/CA2v2/riscVtb.sv(26)
+#    Time: 10020 ns  Iteration: 0  Instance: /tb_RISCV
+# 1
+# Break in Module tb_RISCV at C:/uni/sem4/Computer Architecture/Computer_architecture/CA2v2/riscVtb.sv line 26
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $finish    : C:/uni/sem4/Computer Architecture/Computer_architecture/CA2v2/riscVtb.sv(26)
+#    Time: 10020 ns  Iteration: 0  Instance: /tb_RISCV
+# 1
+# Break in Module tb_RISCV at C:/uni/sem4/Computer Architecture/Computer_architecture/CA2v2/riscVtb.sv line 26
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $finish    : C:/uni/sem4/Computer Architecture/Computer_architecture/CA2v2/riscVtb.sv(26)
+#    Time: 10020 ns  Iteration: 0  Instance: /tb_RISCV
+# 1
+# Break in Module tb_RISCV at C:/uni/sem4/Computer Architecture/Computer_architecture/CA2v2/riscVtb.sv line 26
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Warning: (vsim-PLI-3410) Illegal character '#' in data on line 33 of file "instruction_memory.mem".    : C:/uni/sem4/Computer Architecture/Computer_architecture/CA2v2/instruction_memory.sv(11)
+#    Time: 0 ns  Iteration: 0  Instance: /tb_RISCV/uut/dp/instMem
+# ** Note: $finish    : C:/uni/sem4/Computer Architecture/Computer_architecture/CA2v2/riscVtb.sv(26)
+#    Time: 10020 ns  Iteration: 0  Instance: /tb_RISCV
+# 1
+# Break in Module tb_RISCV at C:/uni/sem4/Computer Architecture/Computer_architecture/CA2v2/riscVtb.sv line 26
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $finish    : C:/uni/sem4/Computer Architecture/Computer_architecture/CA2v2/riscVtb.sv(26)
+#    Time: 10020 ns  Iteration: 0  Instance: /tb_RISCV
+# 1
+# Break in Module tb_RISCV at C:/uni/sem4/Computer Architecture/Computer_architecture/CA2v2/riscVtb.sv line 26
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $finish    : C:/uni/sem4/Computer Architecture/Computer_architecture/CA2v2/riscVtb.sv(26)
+#    Time: 10020 ns  Iteration: 0  Instance: /tb_RISCV
+# 1
+# Break in Module tb_RISCV at C:/uni/sem4/Computer Architecture/Computer_architecture/CA2v2/riscVtb.sv line 26
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $finish    : C:/uni/sem4/Computer Architecture/Computer_architecture/CA2v2/riscVtb.sv(26)
+#    Time: 10020 ns  Iteration: 0  Instance: /tb_RISCV
+# 1
+# Break in Module tb_RISCV at C:/uni/sem4/Computer Architecture/Computer_architecture/CA2v2/riscVtb.sv line 26
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $finish    : C:/uni/sem4/Computer Architecture/Computer_architecture/CA2v2/riscVtb.sv(26)
+#    Time: 10020 ns  Iteration: 0  Instance: /tb_RISCV
+# 1
+# Break in Module tb_RISCV at C:/uni/sem4/Computer Architecture/Computer_architecture/CA2v2/riscVtb.sv line 26
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $finish    : C:/uni/sem4/Computer Architecture/Computer_architecture/CA2v2/riscVtb.sv(26)
+#    Time: 10020 ns  Iteration: 0  Instance: /tb_RISCV
+# 1
+# Break in Module tb_RISCV at C:/uni/sem4/Computer Architecture/Computer_architecture/CA2v2/riscVtb.sv line 26
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $finish    : C:/uni/sem4/Computer Architecture/Computer_architecture/CA2v2/riscVtb.sv(26)
+#    Time: 10020 ns  Iteration: 0  Instance: /tb_RISCV
+# 1
+# Break in Module tb_RISCV at C:/uni/sem4/Computer Architecture/Computer_architecture/CA2v2/riscVtb.sv line 26
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $finish    : C:/uni/sem4/Computer Architecture/Computer_architecture/CA2v2/riscVtb.sv(26)
+#    Time: 10020 ns  Iteration: 0  Instance: /tb_RISCV
+# 1
+# Break in Module tb_RISCV at C:/uni/sem4/Computer Architecture/Computer_architecture/CA2v2/riscVtb.sv line 26
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $finish    : C:/uni/sem4/Computer Architecture/Computer_architecture/CA2v2/riscVtb.sv(26)
+#    Time: 10020 ns  Iteration: 0  Instance: /tb_RISCV
+# 1
+# Break in Module tb_RISCV at C:/uni/sem4/Computer Architecture/Computer_architecture/CA2v2/riscVtb.sv line 26
+# End time: 02:22:24 on Jun 07,2025, Elapsed time: 25:01:52
+# Errors: 0, Warnings: 1
