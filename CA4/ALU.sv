@@ -1,11 +1,10 @@
 module ALU(opc, a, b, zero, out);
-   parameter N = 32;
 
    input [2:0] opc;
-   input signed [N-1:0] a, b;
+   input signed [31:0] a, b;
    
-   output zero, neg;
-   output reg [N-1:0] out; 
+   output zero;
+   output reg [31:0] out; 
    
    always @(a or b or opc) begin
        case (opc)
@@ -15,7 +14,7 @@ module ALU(opc, a, b, zero, out);
            3'b011   :  out = a | b;
            3'b101   :  out = a < b ? 32'd1 : 32'd0;
            3'b100   :  out = a ^ b;
-           default:  out = {N{1'bz}};
+           default:  out = {32{1'bz}};
        endcase
    end
 
