@@ -1,0 +1,73 @@
+# Compile of adder.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALUControl.sv was successful.
+# Compile of branchControl.sv was successful.
+# Compile of datamem.sv was successful.
+# Compile of extend.sv was successful with warnings.
+# Compile of HazardUnit.sv was successful.
+# Compile of InstructionMemory.sv was successful.
+# Compile of MainController.sv was successful.
+# Compile of Mux2to1.v was successful.
+# Compile of Mux4to1.v was successful.
+# Compile of RegEX_Mem.v was successful.
+# Compile of RegID_EX.v was successful.
+# Compile of RegIF_ID.v was successful.
+# Compile of Register.v was successful.
+# Compile of RegisterFile.v was successful.
+# Compile of RegMEM_Wb.v was successful.
+# Compile of RISC_V.v was successful.
+# Compile of RISC_V_Controller.v was successful.
+# Compile of RISC_V_Datapath.v was successful.
+# Compile of TestBench.v was successful.
+# 21 compiles, 0 failed with no errors.
+vsim -gui work.TB
+# vsim -gui work.TB 
+# Start time: 12:03:27 on Jun 12,2025
+# Loading work.TB
+# Loading work.RISC_V
+# Loading work.RISC_V_Controller
+# Loading sv_std.std
+# Loading work.MainController
+# Loading work.ALU_Controller
+# Loading work.RISC_V_Datapath
+# Loading work.Adder
+# Loading work.Register
+# Loading work.InstructionMemory
+# Loading work.Mux4to1
+# Loading work.RegIF_ID
+# Loading work.RegisterFile
+# Loading work.Extend
+# Loading work.ALU
+# Loading work.RegID_EX
+# Loading work.Mux2to1
+# Loading work.RegEX_MEM
+# Loading work.DataMemory
+# Loading work.RegMEM_WB
+# Loading work.HazardUnit
+# Loading work.BranchController
+run -all
+# ** Note: $stop    : C:/uni/sem4/Computer Architecture/no git project/ca4/TestBench.v(10)
+#    Time: 4008 ps  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/uni/sem4/Computer Architecture/no git project/ca4/TestBench.v line 10
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/uni/sem4/Computer Architecture/no git project/ca4/TestBench.v(10)
+#    Time: 4008 ps  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/uni/sem4/Computer Architecture/no git project/ca4/TestBench.v line 10
+restart -f
+add wave -position insertpoint sim:/TB/risc_v/DP/*
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/uni/sem4/Computer Architecture/no git project/ca4/TestBench.v(10)
+#    Time: 4008 ps  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/uni/sem4/Computer Architecture/no git project/ca4/TestBench.v line 10
+restart -f
+quit -sim
+# End time: 12:22:17 on Jun 12,2025, Elapsed time: 0:18:50
+# Errors: 0, Warnings: 1
