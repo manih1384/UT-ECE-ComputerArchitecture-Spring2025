@@ -1,9 +1,3 @@
-`define generalJump 3'b000
-`define BEQ 3'b001
-`define BNE 3'b010
-`define JAL  2'b01
-`define JALR 2'b10
-
 module BranchController(branchE, jumpE, zero, PCSrcE);
 
     input zero;
@@ -14,11 +8,18 @@ module BranchController(branchE, jumpE, zero, PCSrcE);
     
     always @(jumpE, zero, branchE) begin
         case(branchE)
-            `generalJump : PCSrcE <= (jumpE == `JAL)  ? 2'b01 :
-                             (jumpE == `JALR) ? 2'b10 : 2'b00;
-
-            `BEQ : PCSrcE <= (zero)           ? 2'b01 : 2'b00;
-            `BNE : PCSrcE <= (~zero)          ? 2'b01 : 2'b00;
+            3'b000 : begin // generalJump
+                if (jumpE == 2'b01) // JAL
+                    PCSrcE <= 2'b01;
+                else if (jumpE == 2'b10) // JALR
+                    PCSrcE <= 2'b10;
+                else
+                    PCSrcE <= 2'b00;
+            end
+            3'b001 : // BEQ
+                PCSrcE <= (zero)  ? 2'b01 : 2'b00;
+            3'b010 : // BNE
+                PCSrcE <= (~zero) ? 2'b01 : 2'b00;
         endcase
     end
 

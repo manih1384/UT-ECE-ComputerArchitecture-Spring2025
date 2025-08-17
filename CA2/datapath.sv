@@ -37,7 +37,7 @@ module datapath(clk, rst, RegWrite, MemWrite, ResultSrc, PCSrc, ALUSrc, ALUContr
     .PC(PC)
   );    
     instruction_memory inst_mem(
-        .pc(PC), 
+        .PC(PC), 
         .inst(instruction)
     );
     PCPlus4 PC4(

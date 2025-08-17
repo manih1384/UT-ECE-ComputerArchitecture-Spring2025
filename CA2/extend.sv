@@ -2,7 +2,7 @@ module Extend (inst, ImmSrc, ImmExt);
     input [31:0] inst;
     input [2:0] ImmSrc;
     output reg [31:0] ImmExt;
-    always @(inst, ImmSrc) begin
+    always @(instruction, ImmSrc) begin
         case (ImmSrc)
             3'd000: ImmExt={{20{inst[31]}},inst[31:20]}; //I type
             3'd001: ImmExt={{20{inst[31]}},inst[31:25],inst[11:7]}; //S type

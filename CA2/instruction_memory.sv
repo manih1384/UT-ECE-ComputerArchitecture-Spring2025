@@ -8,7 +8,7 @@ module instruction_memory (pc, inst);
     wire [31:0] adr;
     assign adr = {pc[31:2], 2'b00}; 
 
-    initial $readmemh("Inst.mem", memory);
+    initial $readmemh("Ins_Fin.mem", memory);
 
     assign inst = {memory[adr + 3], memory[adr + 2], memory[adr + 1], memory[adr]};
     

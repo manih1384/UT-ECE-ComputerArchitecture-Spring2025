@@ -1,2 +1,0 @@
-https://riscvasm.lucasteske.dev/#
-use this site to convert you assembly to hex file then use convert.py to have usable instructions.mem

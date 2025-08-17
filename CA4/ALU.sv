@@ -1,7 +1,7 @@
 module ALU(opc, a, b, zero, out);
 
    input [2:0] opc;
-   input signed [31:0] a, b;
+   input [31:0] a, b;
    
    output zero;
    output reg [31:0] out; 

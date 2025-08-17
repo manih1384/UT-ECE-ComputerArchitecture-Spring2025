@@ -4,12 +4,12 @@ module DataMemory(address, Data, memWrite, clk, readData);
 
     output [31:0] readData;
 
-    reg [7:0] dataMemory [0:$pow(2, 16)-1]; // 64KB
+    reg [7:0] dataMemory [0:$pow(2, 16)-1];
 
     wire [31:0] adr;
     assign adr = {address[31:2], 2'b00};
 
-    initial $readmemb("data.mem", dataMemory); 
+    initial $readmemb("data.mem", dataMemory,1000); 
 
     always @(posedge clk) begin
         if(memWrite)
