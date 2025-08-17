@@ -12,5 +12,5 @@
 
 
 ## Collaborators
-- [Mani Hosseini](https://github.com/manih1384) (RISC-V Pipeline, Stack CPU)
-- [Shayan Maleki](https://github.com/maleki-shayan) (Maze Solver, Verification)
+- [Mani Hosseini](https://github.com/manih1384)
+- [Shayan Maleki](https://github.com/maleki-shayan)
